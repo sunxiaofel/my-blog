@@ -5,7 +5,3 @@ updates:
     schedule:
       interval: daily
     open-pull-requests-limit: 20
-deploy:
-  type: git
-  repo: https://github.com/sunxiaofel/sunxiaofel.github.io.git # 你的 GitHub 仓库地址
-  branch: main # 分支可以是 'main' 或 'master'，取决于你的仓库设置
