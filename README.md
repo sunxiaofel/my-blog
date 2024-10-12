@@ -1,4 +1,3 @@
 # my-blog
 
-one Blog
-cs
+one blog
