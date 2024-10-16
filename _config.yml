@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 飞的个人博客
+title: 飞的博客
 subtitle: 种一棵树最好的时间是十年前 其次是现在
 description: 一个热衷于分享的个人博客
 keywords: 软件分享 技术分享
@@ -14,7 +14,6 @@ timezone: "Asia/Shanghai"
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://github.com/sunxiaofel/my-blog
-root: .
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -105,3 +104,5 @@ deploy:
   type: git
   repo: https://github.com/sunxiaofel/my-blog # 你的 GitHub 仓库地址
   branch: main # 分支可以是 'main' 或 'master'，取决于你的仓库设置
+
+favicon: /favicon.ico
