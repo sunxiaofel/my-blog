@@ -1,18 +1,45 @@
-<header>
+<header
+
+  style="background-image: <% if (page.banner) { %> url('<%= url_for(page.banner) %>') <% } else { %> url('<%= url_for('/images/banner.png') %>') <% } %>;">
   <nav>
-    <a href="/" class="leftText"><%= config.title %></a>
-    <div>
-      <a href="/">首页</a>
-      <a href="/">搜索</a>
-      <a href="/">标签</a>
-      <a href="/">归档</a>
-      <a href="/">关于</a>
+    <a href="/" class="leftText">
+      <%= config.title %>
+    </a>
+    <div class="nav-bar">
+      <a href="/"> <i class="fa-solid fa-house"></i>首页</a>
+      <a href="/"><i class="fa-solid fa-magnifying-glass"></i>搜索</a>
+      <a href="/"><i class="fa-solid fa-tags"></i>标签</a>
+      <a href="/"><i class="fa-solid fa-box-archive"></i>归档</a>
+      <a href="/"><i class="fa-solid fa-address-card"></i>关于</a>
       <!-- <a href="/">朋友圈</a> -->
     </div>
   </nav>
+
   <div class="text">
-    <h1><%= config.title %></h1>
-    <h2 class="typewriter"></h2>
+    <!-- <h1><%= config.title %></h1> -->
+    <h1 class="header-title">
+      <% if (page.title) { %>
+        <%= page.title %>
+          <% } else { %>
+            <%= config.title %>
+              <% } %>
+    </h1>
+    <p class="post-date">
+      <% if (page.date) { %>
+        <i class="fa-solid fa-calendar-days"></i>
+        发表于 <%= page.date.format('YYYY-MM-DD') %>
+          <% } else { %>
+
+            <% } %>
+    </p>
+
+    <% if (!page.date) { %>
+      <h2 class="typewriter"></h2>
+      <% } else { %>
+
+        <% } %>
+
+
   </div>
   <script>
     const texts = [
@@ -26,9 +53,9 @@
     let currentTextIndex = 0; // 当前句子索引
     let charIndex = 0; // 当前字符索引
     let isDeleting = false; // 是否正在删除
+    const typewriterDiv = document.querySelector(".typewriter");
 
     function typeWriter() {
-      const typewriterDiv = document.querySelector(".typewriter");
       const currentText = texts[currentTextIndex];
 
       if (!isDeleting) {
@@ -62,6 +89,6 @@
     }
 
     // 启动打字机效果
-    typeWriter();
+    typewriterDiv && typeWriter();
   </script>
 </header>

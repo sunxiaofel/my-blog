@@ -10,15 +10,66 @@
       type="image/x-icon"
       href="<%= url_for('/favicon.ico') %>"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css"
+    />
+    <script
+      async
+      src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"
+    ></script>
   </head>
   <body>
     <%- partial('_partial/header') %>
 
     <main>
-      <div class="left-main">
-        <div class="profile"></div>
+      <!-- 左侧个人信息介绍 -->
+      <div class="sidebar">
+        <img src="<%= url_for('/images/avatar.jpg') %>" alt="头像" />
+        <h2><%= config.author %></h2>
+        <p>想起什么就记什么8</p>
+        <div class="icons">
+          <a href="https://github.com/sunxiaofel" target="_blank"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a href="mailto:sunxiaofei1422@gmail.com"
+            ><i class="fas fa-envelope"></i
+          ></a>
+        </div>
       </div>
-      <div class="right-main"></div>
+
+      <!-- 右侧帖子展示 -->
+      <div class="post-list">
+        <% page.posts.forEach(function(post) { %>
+        <div class="post">
+          <div class="post-image">
+            <!-- 这里假设每篇文章的特色图片在post.front-matter中 -->
+            <% if (post.banner) { %>
+            <img src="<%= url_for(post.banner) %>" alt="Post Image" />
+            <% } else { %>
+            <img
+              src="<%= url_for('/images/default-banner.png') %>"
+              alt="Default Post Image"
+            />
+            <% } %>
+          </div>
+          <div class="post-content">
+            <h2 class="post-title">
+              <a href="<%= url_for(post.path) %>"><%= post.title %></a>
+            </h2>
+            <p class="post-date">
+              <i class="fa-solid fa-calendar-days"></i>
+              发表于 <%= post.date.format('YYYY-MM-DD') %>
+            </p>
+            <p class="post-excerpt"><%= post.excerpt %></p>
+          </div>
+        </div>
+        <% }); %>
+      </div>
     </main>
 
     <%- partial('_partial/footer') %>

@@ -3,11 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 飞的博客
+title: 飞的随笔集
 subtitle: 种一棵树最好的时间是十年前 其次是现在
+home: yes
 description: 一个热衷于分享的个人博客
 keywords: 软件分享 技术分享
-author: by Mikasa
+author: Mikasa
 language: cn
 timezone: "Asia/Shanghai"
 
@@ -45,14 +46,14 @@ relative_link: false
 future: true
 syntax_highlighter: highlight.js
 highlight:
-  line_number: true
+  line_number: false
   auto_detect: false
   tab_replace: ""
   wrap: true
   hljs: false
 prismjs:
-  preprocess: true
-  line_number: true
+  preprocess: false
+  line_number: false
   tab_replace: ""
 
 # Home page setting
