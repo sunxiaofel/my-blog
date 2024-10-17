@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= config.title %></title>
+    <link rel="stylesheet" href="<%= url_for('/css/style.css') %>" />
+  </head>
+  <body>
+    <%- partial('_partial/header') %>
+
+    <main>
+      <div class="left-main">
+        <div class="profile"></div>
+      </div>
+      <div class="right-main"></div>
+    </main>
+
+    <%- partial('_partial/footer') %>
+    <script src="<%= url_for('/js/script.js') %>"></script>
+  </body>
+</html>

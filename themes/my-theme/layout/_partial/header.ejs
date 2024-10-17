@@ -1,0 +1,67 @@
+<header>
+  <nav>
+    <a href="/" class="leftText"><%= config.title %></a>
+    <div>
+      <a href="/">首页</a>
+      <a href="/">搜索</a>
+      <a href="/">标签</a>
+      <a href="/">归档</a>
+      <a href="/">关于</a>
+      <!-- <a href="/">朋友圈</a> -->
+    </div>
+  </nav>
+  <div class="text">
+    <h1><%= config.title %></h1>
+    <h2 class="typewriter"></h2>
+  </div>
+  <script>
+    const texts = [
+      "种一棵树最好的时间是十年前 其次是现在",
+      "无人扶我青云志 我自踏雪至山巅！",
+      "欢迎您来到飞的小🛖",
+      "愿你灿烂盛大 人生万路总开花！",
+    ];
+    const typingSpeed = 150; // 打字速度（毫秒）
+    const deletingSpeed = 50; // 删除速度（毫秒）
+    let currentTextIndex = 0; // 当前句子索引
+    let charIndex = 0; // 当前字符索引
+    let isDeleting = false; // 是否正在删除
+
+    function typeWriter() {
+      const typewriterDiv = document.querySelector(".typewriter");
+      const currentText = texts[currentTextIndex];
+
+      if (!isDeleting) {
+        // 打字效果
+        if (charIndex < currentText.length) {
+          typewriterDiv.classList.remove("blink");
+          typewriterDiv.textContent += currentText.charAt(charIndex);
+          charIndex++;
+          setTimeout(typeWriter, typingSpeed); // 继续打字
+        } else {
+          // 完成后开始删除
+          typewriterDiv.classList.add("blink");
+          isDeleting = true;
+          setTimeout(typeWriter, 1000); // 等待一秒后开始删除
+        }
+      } else {
+        typewriterDiv.classList.remove("blink");
+        // 删除效果
+        if (charIndex > 0) {
+          typewriterDiv.textContent = currentText.substring(0, charIndex - 1);
+          charIndex--;
+          setTimeout(typeWriter, deletingSpeed); // 继续删除
+        } else {
+          typewriterDiv.classList.add("blink");
+          // 删除完成，切换到下一句话
+          isDeleting = false;
+          currentTextIndex = (currentTextIndex + 1) % texts.length; // 循环到下一句话
+          setTimeout(typeWriter, 500); // 等待一段时间后重新开始打字
+        }
+      }
+    }
+
+    // 启动打字机效果
+    typeWriter();
+  </script>
+</header>

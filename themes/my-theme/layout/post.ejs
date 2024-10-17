@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= page.title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- partial('_partial/header') %>
+
+    <article>
+        <h1><%= page.title %></h1>
+        <p>Published on <%= page.date.format('YYYY-MM-DD') %></p>
+        <div>
+            <%- page.content %>  <!-- 渲染 markdown 转换后的 HTML 内容 -->
+        </div>
+    </article>
+
+    <%- partial('_partial/footer') %>
+    <script src="/js/script.js"></script>
+</body>
+</html>
