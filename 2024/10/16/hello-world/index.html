@@ -1,27 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hello World</title>
-    <link rel="stylesheet" href="/css/style.css">
-<meta name="generator" content="Hexo 7.3.0"></head>
-<body>
-    <header>
+    <link rel="stylesheet" href="https://sunxiaofel.github.io/my-blog/css/style.css" />
+    <link
+    rel="icon"
+    type="image/x-icon"
+    href="https://sunxiaofel.github.io/my-blog/favicon.ico"
+  />
+  <meta name="generator" content="Hexo 7.3.0"></head>
+  <body>
+    <div >
+      <header
+
+  style="background-image:  url('https://sunxiaofel.github.io/my-blog/images/hello-world-banner.png') ;">
   <nav>
-    <a href="/" class="leftText">飞的随笔集</a>
-    <div>
-      <a href="/">首页</a>
-      <a href="/">搜索</a>
-      <a href="/">标签</a>
-      <a href="/">归档</a>
-      <a href="/">关于</a>
+    <a href="/" class="leftText">
+      飞的随笔集
+    </a>
+    <div class="nav-bar">
+      <a href="/"> <i class="fa-solid fa-house"></i>首页</a>
+      <a href="/"><i class="fa-solid fa-magnifying-glass"></i>搜索</a>
+      <a href="/"><i class="fa-solid fa-tags"></i>标签</a>
+      <a href="/"><i class="fa-solid fa-box-archive"></i>归档</a>
+      <a href="/"><i class="fa-solid fa-address-card"></i>关于</a>
       <!-- <a href="/">朋友圈</a> -->
     </div>
   </nav>
+
   <div class="text">
-    <h1>飞的随笔集</h1>
-    <h2 class="typewriter"></h2>
+    <!-- <h1>飞的随笔集</h1> -->
+    <h1 class="header-title">
+      
+        Hello World
+          
+    </h1>
+    <p class="post-date">
+      
+        <i class="fa-solid fa-calendar-days"></i>
+        发表于 2024-10-16
+          
+    </p>
+
+    
+
+        
+
+
   </div>
   <script>
     const texts = [
@@ -35,9 +62,9 @@
     let currentTextIndex = 0; // 当前句子索引
     let charIndex = 0; // 当前字符索引
     let isDeleting = false; // 是否正在删除
+    const typewriterDiv = document.querySelector(".typewriter");
 
     function typeWriter() {
-      const typewriterDiv = document.querySelector(".typewriter");
       const currentText = texts[currentTextIndex];
 
       if (!isDeleting) {
@@ -71,36 +98,34 @@
     }
 
     // 启动打字机效果
-    typeWriter();
+    typewriterDiv && typeWriter();
   </script>
 </header>
 
-
-    <article>
-        <h1>Hello World</h1>
-        <p>Published on 2024-10-16</p>
-        <div>
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+      <article class="post-detail">
+        <!-- 渲染 markdown 转换后的 HTML 内容 -->
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-  <!-- 渲染 markdown 转换后的 HTML 内容 -->
-        </div>
-    </article>
 
-    <footer>
+      </article>
+
+      <footer>
   <p>&copy; 2024 by Mikasa</p>
 </footer>
 
-    <script src="/js/script.js"></script>
-</body>
+    </div>
+    <script src="https://sunxiaofel.github.io/my-blog/js/script.js"></script>
+    
+  </body>
 </html>

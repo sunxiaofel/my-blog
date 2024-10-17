@@ -1,27 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>部署Hexo到GitHub Pages后样式等文件404 Not Found</title>
-    <link rel="stylesheet" href="/css/style.css">
-<meta name="generator" content="Hexo 7.3.0"></head>
-<body>
-    <header>
+    <link rel="stylesheet" href="https://sunxiaofel.github.io/my-blog/css/style.css" />
+    <link
+    rel="icon"
+    type="image/x-icon"
+    href="https://sunxiaofel.github.io/my-blog/favicon.ico"
+  />
+  <meta name="generator" content="Hexo 7.3.0"></head>
+  <body>
+    <div >
+      <header
+
+  style="background-image:  url('https://sunxiaofel.github.io/my-blog/images/deploy-hexo-banner.jpg') ;">
   <nav>
-    <a href="/" class="leftText">飞的随笔集</a>
-    <div>
-      <a href="/">首页</a>
-      <a href="/">搜索</a>
-      <a href="/">标签</a>
-      <a href="/">归档</a>
-      <a href="/">关于</a>
+    <a href="/" class="leftText">
+      飞的随笔集
+    </a>
+    <div class="nav-bar">
+      <a href="/"> <i class="fa-solid fa-house"></i>首页</a>
+      <a href="/"><i class="fa-solid fa-magnifying-glass"></i>搜索</a>
+      <a href="/"><i class="fa-solid fa-tags"></i>标签</a>
+      <a href="/"><i class="fa-solid fa-box-archive"></i>归档</a>
+      <a href="/"><i class="fa-solid fa-address-card"></i>关于</a>
       <!-- <a href="/">朋友圈</a> -->
     </div>
   </nav>
+
   <div class="text">
-    <h1>飞的随笔集</h1>
-    <h2 class="typewriter"></h2>
+    <!-- <h1>飞的随笔集</h1> -->
+    <h1 class="header-title">
+      
+        部署Hexo到GitHub Pages后样式等文件404 Not Found
+          
+    </h1>
+    <p class="post-date">
+      
+        <i class="fa-solid fa-calendar-days"></i>
+        发表于 2024-10-16
+          
+    </p>
+
+    
+
+        
+
+
   </div>
   <script>
     const texts = [
@@ -35,9 +62,9 @@
     let currentTextIndex = 0; // 当前句子索引
     let charIndex = 0; // 当前字符索引
     let isDeleting = false; // 是否正在删除
+    const typewriterDiv = document.querySelector(".typewriter");
 
     function typeWriter() {
-      const typewriterDiv = document.querySelector(".typewriter");
       const currentText = texts[currentTextIndex];
 
       if (!isDeleting) {
@@ -71,47 +98,44 @@
     }
 
     // 启动打字机效果
-    typeWriter();
+    typewriterDiv && typeWriter();
   </script>
 </header>
 
-
-    <article>
-        <h1>部署Hexo到GitHub Pages后样式等文件404 Not Found</h1>
-        <p>Published on 2024-10-16</p>
-        <div>
-            <p>是这样的，我本地启动服务是可以正常显示样式等静态资源文件，但是我在部署到GitHub Pages之后使用在线链接访问我的博客之后，控制台出现很多条报错，就是静态资源找不到，那么就是根路径配置错误原因造成的。</p>
-<h2 id="1-检查-config-yml-中的-url-和-root-配置"><a href="#1-检查-config-yml-中的-url-和-root-配置" class="headerlink" title="1. 检查 _config.yml 中的 url 和 root 配置"></a>1. 检查 _config.yml 中的 url 和 root 配置</h2><p>Hexo 的配置文件 _config.yml 中，url 和 root 参数会影响生成的站点中资源文件（如 CSS 和 JS）的路径。如果这些路径设置不正确，可能会导致资源加载失败。</p>
+      <article class="post-detail">
+        <!-- 渲染 markdown 转换后的 HTML 内容 -->
+        <h2 id="1-检查-config-yml-中的-url-和-root-配置"><a href="#1-检查-config-yml-中的-url-和-root-配置" class="headerlink" title="1. 检查 _config.yml 中的 url 和 root 配置"></a>1. 检查 _config.yml 中的 url 和 root 配置</h2><p>Hexo 的配置文件 _config.yml 中，url 和 root 参数会影响生成的站点中资源文件（如 CSS 和 JS）的路径。如果这些路径设置不正确，可能会导致资源加载失败。</p>
 <p>打开项目根目录下的 _config.yml 文件，检查以下配置：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">http://localhost:4000</span>  <span class="comment"># 如果是本地预览</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span>  <span class="comment"># 如果是部署到根目录</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">http://localhost:4000</span> <span class="comment"># 如果是本地预览</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span> <span class="comment"># 如果是部署到根目录</span></span><br></pre></td></tr></table></figure>
 
 <p>如果你部署到一个子目录，配置应当是：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">http://example.com</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/blog/</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">http://example.com</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/blog/</span></span><br></pre></td></tr></table></figure>
 
-<p>那么显然我们部署到GitHub Pages一定是子目录下，所以使用相对路径。GitHub中打开项目-&gt;Settings-&gt;左侧列表找到Pages不出意外你会看到 Your site is live at <a target="_blank" rel="noopener" href="https://username.github.io/my-blog/%EF%BC%8C%E8%BF%99%E4%B8%AA%E9%93%BE%E6%8E%A5%E5%B0%B1%E6%98%AF%E4%BD%9C%E4%B8%BA%E6%88%91%E4%BB%AC%E7%9A%84%E5%AD%90%E7%9B%AE%E5%BD%95%E5%8E%BB%E6%89%93%E5%8C%85%E7%9A%84">https://username.github.io/my-blog/，这个链接就是作为我们的子目录去打包的</a></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root: https://username.github.io/my-blog/</span><br></pre></td></tr></table></figure>
+<p>那么显然我们部署到 GitHub Pages 一定是子目录下，所以使用相对路径。GitHub 中打开项目-&gt;Settings-&gt;左侧列表找到 Pages 不出意外你会看到 Your site is live at <a target="_blank" rel="noopener" href="https://username.github.io/my-blog/%EF%BC%8C%E8%BF%99%E4%B8%AA%E9%93%BE%E6%8E%A5%E5%B0%B1%E6%98%AF%E4%BD%9C%E4%B8%BA%E6%88%91%E4%BB%AC%E7%9A%84%E5%AD%90%E7%9B%AE%E5%BD%95%E5%8E%BB%E6%89%93%E5%8C%85%E7%9A%84">https://username.github.io/my-blog/，这个链接就是作为我们的子目录去打包的</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root: https://username.github.io/my-blog/</span><br></pre></td></tr></table></figure>
 
-<p>那么这样一番设置后 问题又来了：<br>我线上可以正常访问了 但是 本地又出问题了。hexo server后 localhost:4000页面就无法正常显示 提示报错：Cannot GET …</p>
+<p>那么这样一番设置后 问题又来了：<br>我线上可以正常访问了 但是 本地又出问题了。hexo server 后 localhost:4000 页面就无法正常显示 提示报错：Cannot GET …</p>
 <h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>为了解决这个问题，可以使用多环境配置，可以为 Hexo 配置不同的环境变量来分别管理本地开发和生产部署的配置。通过这种方式，在开发环境中设置 root: &#x2F;，而在生产构建时设置 root: .。</p>
 <h2 id="在-Hexo-项目的根目录下创建两个配置文件："><a href="#在-Hexo-项目的根目录下创建两个配置文件：" class="headerlink" title="在 Hexo 项目的根目录下创建两个配置文件："></a>在 Hexo 项目的根目录下创建两个配置文件：</h2><p>config_development.yml<br>config_production.yml</p>
-<h3 id="在-config-development-yml-文件中，设置本地开发的-root："><a href="#在-config-development-yml-文件中，设置本地开发的-root：" class="headerlink" title="在 config_development.yml 文件中，设置本地开发的 root："></a>在 config_development.yml 文件中，设置本地开发的 root：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root: /</span><br></pre></td></tr></table></figure>
+<h3 id="在-config-development-yml-文件中，设置本地开发的-root："><a href="#在-config-development-yml-文件中，设置本地开发的-root：" class="headerlink" title="在 config_development.yml 文件中，设置本地开发的 root："></a>在 config_development.yml 文件中，设置本地开发的 root：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root: /</span><br></pre></td></tr></table></figure>
 
-<h3 id="在-config-production-yml-文件中，设置构建环境的-root："><a href="#在-config-production-yml-文件中，设置构建环境的-root：" class="headerlink" title="在 config_production.yml 文件中，设置构建环境的 root："></a>在 config_production.yml 文件中，设置构建环境的 root：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root: https://username.github.io/my-blog/</span><br></pre></td></tr></table></figure>
+<h3 id="在-config-production-yml-文件中，设置构建环境的-root："><a href="#在-config-production-yml-文件中，设置构建环境的-root：" class="headerlink" title="在 config_production.yml 文件中，设置构建环境的 root："></a>在 config_production.yml 文件中，设置构建环境的 root：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root: https://username.github.io/my-blog/</span><br></pre></td></tr></table></figure>
 
-<h3 id="使用-hexo-s-时，指定开发配置文件："><a href="#使用-hexo-s-时，指定开发配置文件：" class="headerlink" title="使用 hexo s 时，指定开发配置文件："></a>使用 hexo s 时，指定开发配置文件：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s --config _config.yml,config_development.yml</span><br></pre></td></tr></table></figure>
+<h3 id="使用-hexo-s-时，指定开发配置文件："><a href="#使用-hexo-s-时，指定开发配置文件：" class="headerlink" title="使用 hexo s 时，指定开发配置文件："></a>使用 hexo s 时，指定开发配置文件：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo s --config _config.yml,config_development.yml</span><br></pre></td></tr></table></figure>
 
 <p>在构建站点时，使用生产配置文件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate --config _config.yml,config_production.yml</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo generate --config _config.yml,config_production.yml</span><br></pre></td></tr></table></figure>
 
 <p>这样配置下来，本地和线上都可以正常访问了。</p>
-  <!-- 渲染 markdown 转换后的 HTML 内容 -->
-        </div>
-    </article>
 
-    <footer>
+      </article>
+
+      <footer>
   <p>&copy; 2024 by Mikasa</p>
 </footer>
 
-    <script src="/js/script.js"></script>
-</body>
+    </div>
+    <script src="https://sunxiaofel.github.io/my-blog/js/script.js"></script>
+    
+  </body>
 </html>
