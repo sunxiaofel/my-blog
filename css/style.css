@@ -102,8 +102,8 @@ ul li {
 }
 
 article {
-  margin: 20px auto;
-  max-width: 800px;
+  margin: 1.25rem auto;
+  max-width: 50rem;
   line-height: 1.8;
 }
 
@@ -111,42 +111,122 @@ article h1,
 article h2,
 article h2 {
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 
 article p {
-  margin: 15px 0;
+  margin: 0.9375rem 0;
 }
 
 article ul {
   list-style: disc;
-  padding-left: 20px;
+  padding-left: 1.25rem;
 }
 
 article ol {
   list-style: decimal;
-  padding-left: 20px;
+  padding-left: 1.25rem;
 }
 
 article blockquote {
-  margin: 15px 0;
-  padding-left: 20px;
-  border-left: 5px solid #ccc;
+  margin: 0.9375rem 0;
+  padding-left: 1.25rem;
+  border-left: 0.3125rem solid #ccc;
   color: #555;
   font-style: italic;
 }
 
 main {
-  width: 70%;
+  width: 70vw;
   min-height: 62.5rem;
-  background-color: white;
+  /* background-color: white; */
   margin: 3.125rem auto;
   border-radius: 0.625rem;
+  display: flex;
+  justify-content: space-between;
 }
 
-.main .left-main {
+/* 左侧个人信息模块 */
+.sidebar {
+  width: 25%;
+  height: 15.625rem;
+  padding: 1.25rem;
+  margin-right: 1.25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+.sidebar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  /* margin-bottom: 15px; */
+}
+
+.sidebar h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.sidebar p {
+  font-size: 14px;
+  color: #666;
+  margin: 0.625rem 0rem;
+}
+
+.sidebar .icons a {
+  font-size: 1rem;
+  margin-right: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.sidebar .icons a:hover {
+  color: #0073e6;
+}
+
+/* 右侧帖子展示模块 */
+.content {
+  width: 75%;
+  padding: 20px;
+  /* background-color: #fff; */
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.post-banner {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.post-title {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.post-meta {
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.post-content {
+  font-size: 16px;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
 footer {
   background-color: rgb(39, 42, 48);
   color: #fff;
@@ -157,9 +237,6 @@ footer {
 
 /* 在小于768px的屏幕宽度下将字体缩小2px */
 @media screen and (max-width: 768px) {
-  /* body {
-      font-size: 14px;
-    } */
   header nav {
     height: 3.75rem;
     padding: 0rem;
