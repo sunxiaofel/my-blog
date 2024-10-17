@@ -21,9 +21,9 @@ url: http://example.com
 root: /blog/
 ```
 
-那么显然我们部署到GitHub Pages一定是子目录下，所以使用相对路径 root：. 才是正确的
+那么显然我们部署到GitHub Pages一定是子目录下，所以使用相对路径。GitHub中打开项目->Settings->左侧列表找到Pages不出意外你会看到 Your site is live at https://username.github.io/my-blog/，这个链接就是作为我们的子目录去打包的
 ```base
-root: .
+root: https://username.github.io/my-blog/
 ```
 
 那么这样一番设置后 问题又来了：
@@ -43,7 +43,7 @@ root: /
 
 ### 在 config_production.yml 文件中，设置构建环境的 root：
 ```base
-root: .
+root: https://username.github.io/my-blog/
 ```
 
 ### 使用 hexo s 时，指定开发配置文件：
