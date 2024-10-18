@@ -124,7 +124,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root: https://username.github.io/my-blog/</span><br></pre></td></tr></table></figure>
 
 <p>那么这样一番设置后 问题又来了：<br>我线上可以正常访问了 但是 本地又出问题了。hexo server 后 localhost:4000 页面就无法正常显示 提示报错：Cannot GET …</p>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>为了解决这个问题，可以使用多环境配置，可以为 Hexo 配置不同的环境变量来分别管理本地开发和生产部署的配置。通过这种方式，在开发环境中设置 root: &#x2F;，而在生产构建时设置 root: .。</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>为了解决这个问题，可以使用多环境配置，可以为 Hexo 配置不同的环境变量来分别管理本地开发和生产部署的配置。通过这种方式，在开发环境中设置 root: &#x2F;，而在生产构建时设置 root: <a target="_blank" rel="noopener" href="https://username.github.io/my-blog/%E3%80%82">https://username.github.io/my-blog/。</a></p>
 <h2 id="在-Hexo-项目的根目录下创建两个配置文件："><a href="#在-Hexo-项目的根目录下创建两个配置文件：" class="headerlink" title="在 Hexo 项目的根目录下创建两个配置文件："></a>在 Hexo 项目的根目录下创建两个配置文件：</h2><p>config_development.yml<br>config_production.yml</p>
 <h3 id="在-config-development-yml-文件中，设置本地开发的-root："><a href="#在-config-development-yml-文件中，设置本地开发的-root：" class="headerlink" title="在 config_development.yml 文件中，设置本地开发的 root："></a>在 config_development.yml 文件中，设置本地开发的 root：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root: /</span><br></pre></td></tr></table></figure>
 
