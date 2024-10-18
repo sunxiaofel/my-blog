@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>部署Hexo到GitHub Pages后样式等文件404 Not Found</title>
     <link rel="stylesheet" href="https://sunxiaofel.github.io/my-blog/css/style.css" />
+    <!-- <link rel="stylesheet" href="https://sunxiaofel.github.io/my-blog/css/highlight.min.css" /> -->
+    <link rel="stylesheet" href="https://sunxiaofel.github.io/my-blog/css/highlightCode.css" />
     <link
-    rel="icon"
-    type="image/x-icon"
-    href="https://sunxiaofel.github.io/my-blog/favicon.ico"
-  />
+      rel="stylesheet"
+      href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://sunxiaofel.github.io/my-blog/favicon.ico"
+    />
   <meta name="generator" content="Hexo 7.3.0"></head>
   <body>
-    <div >
-      <header
+    <header
 
   style="background-image:  url('https://sunxiaofel.github.io/my-blog/images/deploy-hexo-banner.jpg') ;">
   <nav>
@@ -40,7 +45,7 @@
     <p class="post-date">
       
         <i class="fa-solid fa-calendar-days"></i>
-        发表于 2024-10-16
+        发表于 2024-10-17 15:12:17
           
     </p>
 
@@ -53,7 +58,7 @@
   <script>
     const texts = [
       "种一棵树最好的时间是十年前 其次是现在",
-      "无人扶我青云志 我自踏雪至山巅！",
+      // "无人扶我青云志 我自踏雪至山巅！",
       "欢迎您来到飞的小🛖",
       "愿你灿烂盛大 人生万路总开花！",
     ];
@@ -102,9 +107,9 @@
   </script>
 </header>
 
-      <article class="post-detail">
-        <!-- 渲染 markdown 转换后的 HTML 内容 -->
-        <h2 id="1-检查-config-yml-中的-url-和-root-配置"><a href="#1-检查-config-yml-中的-url-和-root-配置" class="headerlink" title="1. 检查 _config.yml 中的 url 和 root 配置"></a>1. 检查 _config.yml 中的 url 和 root 配置</h2><p>Hexo 的配置文件 _config.yml 中，url 和 root 参数会影响生成的站点中资源文件（如 CSS 和 JS）的路径。如果这些路径设置不正确，可能会导致资源加载失败。</p>
+    <article class="article-entry">
+      <!-- 渲染 markdown 转换后的 HTML 内容 -->
+      <h2 id="检查-config-yml-中的-url-和-root-配置"><a href="#检查-config-yml-中的-url-和-root-配置" class="headerlink" title="检查 _config.yml 中的 url 和 root 配置"></a>检查 _config.yml 中的 url 和 root 配置</h2><p>Hexo 的配置文件 _config.yml 中，url 和 root 参数会影响生成的站点中资源文件（如 CSS 和 JS）的路径。如果这些路径设置不正确，可能会导致资源加载失败。</p>
 <p>打开项目根目录下的 _config.yml 文件，检查以下配置：</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">http://localhost:4000</span> <span class="comment"># 如果是本地预览</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span> <span class="comment"># 如果是部署到根目录</span></span><br></pre></td></tr></table></figure>
 
@@ -128,14 +133,22 @@
 
 <p>这样配置下来，本地和线上都可以正常访问了。</p>
 
-      </article>
+    </article>
 
-      <footer>
+    <footer>
   <p>&copy; 2024 by Mikasa</p>
 </footer>
 
-    </div>
     <script src="https://sunxiaofel.github.io/my-blog/js/script.js"></script>
-    
+    <!-- <script src="https://sunxiaofel.github.io/my-blog/js/highlight.min.js"></script> -->
+    <!-- <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script> -->
+    <!-- <script>
+      hljs.addPlugin(new CopyButtonPlugin());
+      hljs.addPlugin(
+        new CopyButtonPlugin({
+          autohide: false, // Always show the copy button
+        })
+      );
+    </script> -->
   </body>
 </html>

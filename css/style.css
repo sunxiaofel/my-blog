@@ -1,3 +1,5 @@
+
+
 body {
   font-family: Arial, sans-serif;
   /* line-height: 1.6; */
@@ -6,6 +8,11 @@ body {
   background-color: #eeeeee;
   background-size: cover;
 }
+
+html {
+  font-size: 16px; /* 1rem = 16px */
+}
+
 
 * {
   text-decoration: none;
@@ -276,40 +283,12 @@ main {
   transform: scale(1.2);
 }
 
-/* 设置代码块背景颜色为深色 */
-pre {
-  background-color: #2e2e2e; /* 深色背景 */
-  color: #ffffff; /* 文字颜色 */
-  padding: 10px; /* 内边距 */
-  border-radius: 4px; /* 圆角 */
-  overflow: auto; /* 滚动条 */
+.article-entry{
+  padding: 1.25rem  12.5rem;
+  background-color: white;
+  border-radius: .5rem;
 }
 
-/* 高亮显示 */
-.hljs {
-  background: #2e2e2e; /* 与 pre 背景一致 */
-}
-
-/* 设置代码高亮颜色 */
-.hljs-keyword,
-.hljs-selector-tag {
-  color: #ff79c6; /* 关键词颜色 */
-}
-
-.hljs-string {
-  color: #50fa7b; /* 字符串颜色 */
-}
-
-.hljs-comment {
-  color: #6272a4; /* 注释颜色 */
-}
-
-/* 根据需要添加更多高亮样式 */
-
-
-.gutter {
-  display: none; /* 隐藏行号 */
-}
 
 
 footer {
@@ -334,5 +313,11 @@ footer {
   main {
     width: 100%;
     margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+      font-size: 14px; /* 更改基础字体大小 */
   }
 }
