@@ -117,18 +117,7 @@
     // 启动打字机效果
     typewriterDiv && typeWriter();
 
-    function toMusicCoverImgPath(coverImg) {
-      return `https://sunxiaofel.github.io/my-blog/images/` + coverImg;
-    }
-
-    function toMusicPath(music) {
-      return `https://sunxiaofel.github.io/my-blog/music/` + music;
-    }
-
     let ap;
-    console.log(toMusicPath("cjsql.mp3"));
-    console.log(toMusicCoverImgPath("cjsql.png"));
-
     function musicFn() {
       ap = new APlayer({
         container: document.getElementById("aplayer"),
@@ -136,8 +125,8 @@
           {
             name: "曾经是情侣（Live）",
             artist: "梁博",
-            url: toMusicPath("cjsql.mp3"),
-            cover: toMusicCoverImgPath("cjsql.png"),
+            url: "https://sunxiaofel.github.io/my-blog/music/cjsql.mp3",
+            cover: "https://sunxiaofel.github.io/my-blog/images/cjsql.png",
           },
         ],
         preload: "none", // 可选：设置为 'none' 来减少初始加载时间
