@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>飞的随笔集</title>
+    <link rel="stylesheet" href="https://sunxiaofel.github.io/my-blog/css/style.css" />
     <link
       rel="icon"
       type="image/x-icon"
@@ -13,11 +14,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <!-- <link
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"
-    /> -->
-    <link rel="stylesheet" href="https://sunxiaofel.github.io/my-blog/css/style.css" />
+    />
   <meta name="generator" content="Hexo 7.3.0"></head>
   <body>
     <header
@@ -55,8 +55,18 @@
     
     <h2 class="typewriter"></h2>
     
+
+    <div class="aplayerParent">
+      <i
+        class="fa-solid fa-chevron-right right-icon"
+        onclick="hiddenAplayer()"
+      ></i>
+      <div id="aplayer"></div>
+      <i class="fa-solid fa-chevron-left left-icon" onclick="showAplayer()"></i>
+    </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
   <script>
     const texts = [
       "种一棵树最好的时间是十年前 其次是现在",
@@ -106,6 +116,58 @@
 
     // 启动打字机效果
     typewriterDiv && typeWriter();
+
+    function toMusicCoverImgPath(coverImg) {
+      return `https://sunxiaofel.github.io/my-blog/images/` + coverImg;
+    }
+
+    function toMusicPath(music) {
+      return `https://sunxiaofel.github.io/my-blog/music/` + music;
+    }
+
+    let ap;
+    console.log(toMusicPath("cjsql.mp3"));
+    console.log(toMusicCoverImgPath("cjsql.png"));
+
+    function musicFn() {
+      ap = new APlayer({
+        container: document.getElementById("aplayer"),
+        audio: [
+          {
+            name: "曾经是情侣（Live）",
+            artist: "梁博",
+            url: toMusicPath("cjsql.mp3"),
+            cover: toMusicCoverImgPath("cjsql.png"),
+          },
+        ],
+        preload: "none", // 可选：设置为 'none' 来减少初始加载时间
+        listFolded: true, // 默认为 false，将其设置为 true
+        theme: "#97949", // 可选：设置主题颜色
+        autoplay: true,
+      });
+    }
+
+    musicFn();
+
+    const rightIcon = document.querySelector(".fa-chevron-right");
+    const leftIcon = document.querySelector(".fa-chevron-left");
+    const aplayer = document.querySelector(".aplayer");
+    const aplayerParent = document.querySelector(".aplayerParent");
+    leftIcon.style.display = "none";
+    function hiddenAplayer() {
+      rightIcon.style.display = "none";
+      // aplayer.style.display = "none";
+      ap.destroy();
+      aplayerParent.removeChild(aplayer);
+      leftIcon.style.display = "inline-block";
+    }
+    function showAplayer() {
+      aplayerParent.appendChild(aplayer);
+      musicFn();
+      rightIcon.style.display = "inline-block";
+      aplayer.style.display = "inline-block";
+      leftIcon.style.display = "none";
+    }
   </script>
 </header>
 
@@ -172,95 +234,33 @@
         </div>
         
       </div>
-      <!-- 音频播放器 -->
-      <div class="aplayerContainer">
-        <i
-          class="fa-solid fa-chevron-right right-icon"
-          onclick="hiddenAplayer()"
-        ></i>
-        <!-- <div id="aplayer"></div> -->
-        <i
-          class="fa-solid fa-chevron-left left-icon"
-          onclick="showAplayer()"
-        ></i>
-      </div>
-      <!--  -->
     </main>
 
     <footer>
   <p>&copy; 2024 by Mikasa</p>
 </footer>
- 
+
+
+    <!--  -->
+
+    
     <script>
       // 禁止右键
-      // document.addEventListener("contextmenu", function (e) {
-      //   console.log(111);
-      //   e.preventDefault();
-      // });
+      document.addEventListener("contextmenu", function (e) {
+        console.log(111);
+        e.preventDefault();
+      });
 
       // 禁止 F12 打开控制台
-      // document.onkeydown = function (e) {
-      //   if (e.key === "F12") {
-      //     e.preventDefault();
-      //     return false;
-      //   }
-      // };
+      document.onkeydown = function (e) {
+        if (e.key === "F12") {
+          e.preventDefault();
+          return false;
+        }
+      };
     </script>
     
 
     <script src="https://sunxiaofel.github.io/my-blog/js/script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
-    <script>
-      function toMusicCoverImgPath(coverImg) {
-        return `https://sunxiaofel.github.io/my-blog/images/` + coverImg;
-      }
-
-      function toMusicPath(music) {
-        return `https://sunxiaofel.github.io/my-blog/music/` + music;
-      }
-
-      let ap;
-      console.log(toMusicPath("cjsql.mp3"));
-      console.log(toMusicCoverImgPath("cjsql.png"));
-
-      function musicFn() {
-        ap = new APlayer({
-          container: document.getElementById("aplayer"),
-          audio: [
-            {
-              name: "曾经是情侣（Live）",
-              artist: "梁博",
-              url: toMusicPath("cjsql.mp3"),
-              cover: toMusicCoverImgPath("cjsql.png"),
-            },
-          ],
-          preload: "none", // 可选：设置为 'none' 来减少初始加载时间
-          listFolded: true, // 默认为 false，将其设置为 true
-          theme: "#97949", // 可选：设置主题颜色
-          autoplay: true,
-        });
-      }
-
-      musicFn();
-
-      const rightIcon = document.querySelector(".fa-chevron-right");
-      const leftIcon = document.querySelector(".fa-chevron-left");
-      const aplayer = document.querySelector(".aplayer");
-      const aplayerParent = document.querySelector(".aplayerContainer");
-      leftIcon.style.display = "none";
-      function hiddenAplayer() {
-        rightIcon.style.display = "none";
-        ap.destroy();
-        aplayerParent.removeChild(aplayer);
-        leftIcon.style.display = "inline-block";
-      }
-      function showAplayer() {
-        aplayerParent.appendChild(aplayer);
-        musicFn();
-        rightIcon.style.display = "inline-block";
-        aplayer.style.display = "inline-block";
-        leftIcon.style.display = "none";
-      }
-    </script>
   </body>
 </html>

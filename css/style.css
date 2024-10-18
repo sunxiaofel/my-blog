@@ -3,7 +3,7 @@ body {
   /* line-height: 1.6; */
   margin: 0rem;
   padding: 0rem;
-  background-color: red;
+  background-color: #eeeeee;
   background-size: cover;
 }
 
@@ -70,17 +70,18 @@ header nav a {
   color: #cccccc;
 }
 
-.aplayerContainer {
+.aplayerParent {
   height: 4.375rem;
-  width: 12.5rem;
-  background-color: red;
+  position: fixed;
+  top: 4.375rem; /* 距离底部20px */
+  right: 0.3125rem; /* 距离左边20px */
+  z-index: 1000; /* 确保在其他元素上方 */
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.aplayerContainer i {
-  color: white;
+.aplayerParent i {
   font-size: 1.875rem;
   margin-right: 0.3125rem;
   cursor: pointer;
